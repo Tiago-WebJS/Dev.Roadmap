@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Roadmap · Full Stack + Data Engineering + IA</title>
+    <meta name="description" content="Roadmap estruturado para desenvolvedores: Python, SQL, React, Machine Learning, Engenharia de Dados, IA Generativa e Carreira.">
+    <meta name="author" content="Seu Nome">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Dev Roadmap - Carreira em Tecnologia">
+    <meta property="og:description" content="Um guia completo do zero à arquitetura enterprise com projetos práticos">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon (opcional) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #fafbfc;
+            color: #1a2a3a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #1a472a 0%, #0f2b3d 100%);
+            border-radius: 2rem;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .badge-container {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+        }
+        
+        /* Mapa Mental */
+        .mindmap {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e1e4e8;
+            overflow-x: auto;
+        }
+        
+        .mindmap h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tree {
+            font-family: 'SF Mono', 'Monaco', monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            white-space: pre;
+            overflow-x: auto;
+            background: #f6f8fa;
+            padding: 1.5rem;
+            border-radius: 1rem;
+        }
+        
+        /* Fases Grid */
+        .phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .phase-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #e1e4e8;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .phase-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        .phase-number {
+            display: inline-block;
+            background: #1a472a;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .phase-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .phase-duration {
+            color: #6a737d;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid #1a472a;
+            padding-left: 0.8rem;
+        }
+        
+        .phase-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            background: #f1f3f4;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            font-size: 0.7rem;
+            color: #1a2a3a;
+        }
+        
+        .phase-project {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e1e4e8;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Projetos */
+        .projects {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e1e4e8;
+        }
+        
+        .projects h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        
+        .project-item {
+            background: #f6f8fa;
+            padding: 1rem;
+            border-radius: 0.75rem;
+        }
+        
+        .project-item strong {
+            color: #1a472a;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #e1e4e8;
+            margin-top: 2rem;
+            color: #6a737d;
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 700px) {
+            .tree {
+                font-size: 0.65rem;
+                line-height: 1.5;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    
+    <!-- Header -->
+    <div class="header">
+        <h1>🗺️ Dev Roadmap</h1>
+        <p>Full Stack · Data Engineering · IA Generativa · Carreira</p>
+        <div class="badge-container">
+            <span class="badge">Python</span>
+            <span class="badge">React</span>
+            <span class="badge">FastAPI</span>
+            <span class="badge">Airflow</span>
+            <span class="badge">Next.js</span>
+            <span class="badge">LangChain</span>
+        </div>
+    </div>
+    
+    <!-- Mapa Mental -->
+    <div class="mindmap">
+        <h2>🧠 Mapa Mental da Jornada</h2>
+        <div class="tree">
+FASE 1 — FUNDAMENTOS
+├── Python (OOP, funções, listas, dicionários)
+├── SQL (JOINs, CTEs, subqueries, GROUP BY)
+├── Pandas + NumPy (DataFrames, operações vetorizadas)
+├── JavaScript ES6+ (arrow functions, destructuring, modules)
+├── Node.js + Express (APIs, middlewares)
+├── PostgreSQL local + psycopg2 / SQLAlchemy
+└── Git/GitHub (branches, PRs, workflow)
+    │
+    ▼
+FASE 2 — ML + FULL STACK
+├── scikit-learn (regressão, classificação, pipelines)
+├── FastAPI + Pydantic (APIs performáticas)
+├── Plotly Express (visualização interativa)
+├── SQL avançado (window functions, EXPLAIN, índices)
+├── React (hooks, useEffect, consumo de API)
+├── React Router
+├── JWT + bcrypt (autenticação)
+├── Prisma ORM + TypeScript básico
+└── Integração React ↔ FastAPI
+    │
+    ▼
+FASE 3 — DATA ENGINEERING + IA
+├── Apache Airflow (pipelines ETL)
+├── Kafka / Pub/Sub (streaming)
+├── dbt + BigQuery/Snowflake
+├── LangChain + OpenAI API + RAG
+├── Docker (containerização)
+├── pytest (testes)
+├── React Query (TanStack) + Zustand
+├── GitHub Actions (CI/CD)
+└── Playwright + Jest (testes E2E)
+    │
+    ▼
+FASE 4 — CLOUD + ENTERPRISE
+├── AWS/GCP (S3, Lambda, RDS, Cloud Functions)
+├── PySpark (big data)
+├── dbt avançado (macros, testes, documentação)
+├── Delta Lake / Iceberg
+├── Great Expectations (observabilidade)
+├── Next.js (App Router, SSR, SSG, Server Components)
+├── Tailwind + Radix UI (design system)
+├── WebSockets (tempo real)
+├── PWA + i18n
+└── Web Vitals, bundle analysis
+    │
+    ▼
+FASE 5 — PORTFÓLIO + CARREIRA
+├── GitHub Profile README profissional
+├── READMEs com badges, demos GIF, setup em 1 comando
+├── Artigos técnicos mensais (Medium/Substack)
+├── Kaggle + contribuições open source
+├── Currículo focado em impacto
+├── Candidaturas (BR: Gupy, LinkedIn; Internacional: Turing, Toptal)
+├── Freelance Upwork (inglês)
+└── Preparação: system design + coding challenges
+        </div>
+    </div>
+    
+    <!-- Fases -->
+    <div class="phases">
+        <div class="phase-card">
+            <span class="phase-number">FASE 1</span>
+            <h3>🧱 Fundamentos</h3>
+            <div class="phase-duration">📅 16 semanas | Projeto 1</div>
+            <div class="phase-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Git</span>
+            </div>
+            <div class="phase-project">
+                🎯 Projeto: Data CLI Manager — CRUD Python + Node CLI + análise de dados
+            </div>
+        </div>
+        
+        <div class="phase-card">
+            <span class="phase-number">FASE 2</span>
+            <h3>📊 ML + Full Stack</h3>
+            <div class="phase-duration">📅 16 semanas | Projetos 2 e 3</div>
+            <div class="phase-tech">
+                <span class="tech-tag">scikit-learn</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">JWT</span>
+                <span class="tech-tag">Prisma</span>
+                <span class="tech-tag">TypeScript</span>
+            </div>
+            <div class="phase-project">
+                🎯 Projeto: ML API + Dashboard + Sistema de autenticação
+            </div>
+        </div>
+        
+        <div class="phase-card">
+            <span class="phase-number">FASE 3</span>
+            <h3>⚙️ Data Eng + IA</h3>
+            <div class="phase-duration">📅 16 semanas | Projeto 4</div>
+            <div class="phase-tech">
+                <span class="tech-tag">Airflow</span>
+                <span class="tech-tag">LangChain</span>
+                <span class="tech-tag">OpenAI</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">React Query</span>
+                <span class="tech-tag">Playwright</span>
+            </div>
+            <div class="phase-project">
+                🎯 Projeto: Pipeline RAG + testes E2E + CI/CD
+            </div>
+        </div>
+        
+        <div class="phase-card">
+            <span class="phase-number">FASE 4</span>
+            <h3>☁️ Cloud + Enterprise</h3>
+            <div class="phase-duration">📅 16 semanas | Projetos 5 e 6</div>
+            <div class="phase-tech">
+                <span class="tech-tag">AWS/GCP</span>
+                <span class="tech-tag">PySpark</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Delta Lake</span>
+                <span class="tech-tag">dbt</span>
+                <span class="tech-tag">Tailwind</span>
+            </div>
+            <div class="phase-project">
+                🎯 Projeto: Plataforma cloud-native + Open Source / SaaS
+            </div>
+        </div>
+        
+        <div class="phase-card">
+            <span class="phase-number">FASE 5</span>
+            <h3>📈 Carreira + Portfólio</h3>
+            <div class="phase-duration">📅 8 semanas | Projeto 7</div>
+            <div class="phase-tech">
+                <span class="tech-tag">GitHub</span>
+                <span class="tech-tag">LinkedIn</span>
+                <span class="tech-tag">Medium</span>
+                <span class="tech-tag">Upwork</span>
+                <span class="tech-tag">System Design</span>
+            </div>
+            <div class="phase-project">
+                🎯 Projeto: SaaS próprio ou consultoria B2B + artigos técnicos
+            </div>
+        </div>
+    </div>
+    
+    <!-- Projetos Estratégicos -->
+    <div class="projects">
+        <h2>🎯 Projetos Estratégicos do Portfólio</h2>
+        <div class="projects-grid">
+            <div class="project-item">
+                <strong>#1 — Data CLI Manager</strong><br>
+                Python CRUD + Node CLI + Pandas<br>
+                <span style="font-size:0.75rem;">Integração entre stacks via PostgreSQL</span>
+            </div>
+            <div class="project-item">
+                <strong>#2 — ML API + Dashboard</strong><br>
+                FastAPI + React + scikit-learn<br>
+                <span style="font-size:0.75rem;">Modelo em produção com interface</span>
+            </div>
+            <div class="project-item">
+                <strong>#3 — Auth System</strong><br>
+                Node + Prisma + JWT + TypeScript<br>
+                <span style="font-size:0.75rem;">Backend profissional</span>
+            </div>
+            <div class="project-item">
+                <strong>#4 — RAG Pipeline</strong><br>
+                Airflow + LangChain + React Query<br>
+                <span style="font-size:0.75rem;">IA generativa + orquestração</span>
+            </div>
+            <div class="project-item">
+                <strong>#5 — Plataforma Enterprise</strong><br>
+                Next.js + PySpark + dbt + AWS<br>
+                <span style="font-size:0.75rem;">Aplicação cloud-native escalável</span>
+            </div>
+            <div class="project-item">
+                <strong>#6 — Open Source / SaaS</strong><br>
+                Livre (produto próprio)<br>
+                <span style="font-size:0.75rem;">Reputação ou monetização</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Stack Tecnológica -->
+    <div class="projects">
+        <h2>📚 Stack Tecnológica</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <div>
+                <strong>Linguagens</strong><br>
+                Python · JavaScript · TypeScript · SQL
+            </div>
+            <div>
+                <strong>Backend</strong><br>
+                FastAPI · Express · Prisma · JWT
+            </div>
+            <div>
+                <strong>Frontend</strong><br>
+                React · Next.js · Tailwind · React Query
+            </div>
+            <div>
+                <strong>Dados & IA</strong><br>
+                Pandas · scikit-learn · Airflow · LangChain · PySpark
+            </div>
+            <div>
+                <strong>DevOps</strong><br>
+                Docker · GitHub Actions · AWS/GCP
+            </div>
+            <div>
+                <strong>Testes</strong><br>
+                pytest · Jest · Playwright
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>🗺️ Roadmap dinâmico — adapte conforme seus objetivos | Cada fase entrega projetos reais para portfólio</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://github.com/SEU_USUARIO/dev-roadmap" style="color: #1a472a;">GitHub Repository</a> · 
+            Versão 1.0 · Março 2026
+        </p>
+    </div>
+</div>
+</body>
+</html>
