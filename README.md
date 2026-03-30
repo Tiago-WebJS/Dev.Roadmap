@@ -17,7 +17,7 @@ Este roadmap organiza um caminho de aprendizado progressivo dividido em **5 gran
 
 ## 🗺️ Visualização
 
-Acesse o roadmap interativo: **[https://SEU_USUARIO.github.io/dev-roadmap](https://SEU_USUARIO.github.io/dev-roadmap)**
+Acesse o roadmap interativo: **[https://SEU_USUARIO.github.io/dev-roadmap](https://tiago-webjs.github.io/Dev.Roadmap/)**
 
 Ou explore a estrutura abaixo:
 
